@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/b1"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    android:id="@+id/b2"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    android:id="@+id/b3"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/b4"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    android:id="@+id/b5"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    android:id="@+id/b6"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/b7"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    android:id="@+id/b8"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    android:id="@+id/b9"
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/resultView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <LinearLayout
+                android:id="@+id/GameControls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/bPlayAgain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playAgain" />
+
+                <Button
+                    android:id="@+id/bFinish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finish" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

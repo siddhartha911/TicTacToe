@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/welcome_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set options for game:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/welcome_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose difficulty level:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioGroup
+        android:id="@+id/rDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rEasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easy" />
+
+        <RadioButton
+            android:id="@+id/rMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Medium" />
+
+        <RadioButton
+            android:id="@+id/rHard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hard" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/welcome_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose beginner:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioGroup
+        android:id="@+id/rBegin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="User" />
+
+        <RadioButton
+            android:id="@+id/rCPU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPU" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/bSetOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start game" />
+
+        <Button
+            android:id="@+id/bRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go back" />
+    </LinearLayout>
+
+</LinearLayout>
