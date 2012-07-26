@@ -30,12 +30,13 @@ public class GameUI extends Activity implements View.OnClickListener {
 		initUI();
 		initGame();
 
-		if (!game.getUserBegins()) {
+		if (game.isAgainstCPU()) {
 			tvInput.setText("UserBegins: " + game.getUserBegins()
 					+ ", Difficulty: " + game.getDifficulty().toString()
 					+ "\nInput: ");
-
-			makeCPUMove(game.getCPUMove());
+			if (!game.getUserBegins()) {
+				makeCPUMove(game.getCPUMove());
+			}
 		} else {
 			tvInput.setText("Input: ");
 		}
@@ -83,7 +84,8 @@ public class GameUI extends Activity implements View.OnClickListener {
 
 			public void onClick(View arg0) {
 				Bundle bundle = new Bundle();
-				bundle.putString(Constants.WINNERNAME, game.getWinner().toString());
+				bundle.putString(Constants.WINNERNAME, game.getWinner()
+						.toString());
 				bundle.putBoolean(Constants.RESTART, true);
 				Intent intent = new Intent();
 				intent.putExtras(bundle);
@@ -99,7 +101,8 @@ public class GameUI extends Activity implements View.OnClickListener {
 
 			public void onClick(View arg0) {
 				Bundle bundle = new Bundle();
-				bundle.putString(Constants.WINNERNAME, game.getWinner().toString());
+				bundle.putString(Constants.WINNERNAME, game.getWinner()
+						.toString());
 				bundle.putBoolean(Constants.RESTART, false);
 				Intent intent = new Intent();
 				intent.putExtras(bundle);

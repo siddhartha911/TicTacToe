@@ -3,6 +3,7 @@ package com.sdrocking;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import com.sdrocking.Constants.*;
 
@@ -76,14 +77,6 @@ public class GameBackend {
 	}
 
 	public int getCPUMove() {
-		// TODO: play random in easy mode
-		List<Integer> corners, edgeCenters;
-
-		if (buttonValue[5] == ButtonValue.BLANK
-				&& difficulty != Difficulty.EASY) {
-			return 5;
-		}
-
 		if (turns >= 3) {
 			// win if possible
 			for (int i = 0; i < winCombo.length; ++i) {
@@ -106,10 +99,25 @@ public class GameBackend {
 			}
 		}
 
+		if (difficulty == Difficulty.EASY) {
+			// Play randomly in EASY mode
+			Random rand = new Random();
+			int choice;
+			do {
+				choice = 1 + rand.nextInt(buttonValue.length - 1);
+			} while (buttonValue[choice] != ButtonValue.BLANK);
+			return choice;
+		}
+
+		if (buttonValue[5] == ButtonValue.BLANK) {
+			return 5;
+		}
+
+		List<Integer> edgeCenters;
 		edgeCenters = Arrays.asList(2, 6, 8, 4);
 		Collections.shuffle(edgeCenters);
 
-		if (turns == 3 && userBegins && difficulty != Difficulty.EASY) {
+		if (turns == 3 && userBegins) {
 			// force opponent to defend if opposite corners are occupied
 			if ((buttonValue[1] == ButtonValue.PLAYER1 && buttonValue[9] == ButtonValue.PLAYER1)
 					|| (buttonValue[3] == ButtonValue.PLAYER1 && buttonValue[7] == ButtonValue.PLAYER1)) {
@@ -167,7 +175,7 @@ public class GameBackend {
 			}
 		}
 
-		corners = Arrays.asList(1, 3, 9, 7);
+		List<Integer> corners = Arrays.asList(1, 3, 9, 7);
 		Collections.shuffle(corners);
 
 		if (difficulty == Difficulty.HARD) {
